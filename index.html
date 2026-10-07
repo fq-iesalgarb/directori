@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Física i Química - IES Algarb | Portal d'Activitats</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- FontAwesome icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google Fonts: Inter & Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #080c14;
+        }
+
+        h1, h2, h3, .font-heading {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        /* Animated Dark Scientific Background Gradient */
+        .animated-bg {
+            background: linear-gradient(135deg, #060913 0%, #0c1527 35%, #180d2e 70%, #080c14 100%);
+            background-size: 300% 300%;
+            animation: gradientMove 16s ease infinite;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Dynamic Glow Orbs */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.28;
+            pointer-events: none;
+            animation: floatOrb 12s ease-in-out infinite alternate;
+        }
+
+        @keyframes floatOrb {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(35px, -45px) scale(1.15); }
+        }
+
+        /* Glassmorphism Panels & Cards */
+        .glass-panel {
+            background: rgba(17, 25, 42, 0.55);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .glass-card {
+            background: rgba(22, 33, 56, 0.45);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255, 255, 255, 0.09);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-card:hover {
+            background: rgba(30, 46, 78, 0.7);
+            border-color: rgba(255, 255, 255, 0.25);
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.65);
+        }
+
+        /* Hover Glows for Cards */
+        .card-glow-cyan:hover {
+            box-shadow: 0 0 35px -5px rgba(6, 182, 212, 0.35), 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-glow-purple:hover {
+            box-shadow: 0 0 35px -5px rgba(168, 85, 247, 0.35), 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-glow-emerald:hover {
+            box-shadow: 0 0 35px -5px rgba(16, 185, 129, 0.35), 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+        }
+
+        .icon-bounce {
+            transition: transform 0.3s ease;
+        }
+
+        .glass-card:hover .icon-bounce {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #080c14;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="animated-bg text-slate-100 min-h-screen flex flex-col justify-between relative overflow-x-hidden selection:bg-cyan-500 selection:text-slate-950">
+
+    <!-- Ambient Glow Orbs -->
+    <div class="orb w-96 h-96 bg-cyan-500 top-10 -left-20"></div>
+    <div class="orb w-[30rem] h-[30rem] bg-purple-600 top-1/3 -right-32" style="animation-delay: -4s;"></div>
+    <div class="orb w-96 h-96 bg-emerald-500 -bottom-20 left-1/3" style="animation-delay: -7s;"></div>
+
+    <!-- Main Container -->
+    <div class="relative z-10 flex-grow flex flex-col items-center justify-start px-4 sm:px-6 lg:px-8 py-10 sm:py-16 max-w-6xl mx-auto w-full">
+
+        <!-- Header Section -->
+        <header class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full glass-panel border border-cyan-500/30 text-cyan-300 text-xs sm:text-sm font-medium mb-6 tracking-wide shadow-lg">
+                <i class="fa-solid fa-flask-vial text-cyan-400 animate-pulse"></i>
+                <span class="font-heading uppercase tracking-wider text-slate-200">IES Algarb</span>
+                <span class="text-slate-500">•</span>
+                <span class="text-cyan-300">Departament de Física i Química</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight mb-5 text-white leading-tight">
+                Física i Química <br class="hidden sm:inline"/>
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-teal-300 to-purple-400">
+                    Portal d'Activitats i Simulacions
+                </span>
+            </h1>
+
+            <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">
+                Selecciona una de les activitats interactives per explorar els conceptes de la matèria, practicar exercicis i avaluar els teus coneixements.
+            </p>
+        </header>
+
+        <main class="w-full grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-16">
+
+            <!-- Card 1: Configuració Electrònica -->
+            <a href="https://fq-iesalgarb.github.io/configuracioelectronica/" target="_self" 
+               class="glass-card card-glow-cyan rounded-3xl p-7 flex flex-col justify-between group relative overflow-hidden">
+                
+                <div class="absolute -top-12 -right-12 w-32 h-32 bg-cyan-500/10 rounded-full blur-2xl group-hover:bg-cyan-500/25 transition-all"></div>
+
+                <div>
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-cyan-600 to-teal-400 flex items-center justify-center text-white text-3xl shadow-lg shadow-cyan-500/20 icon-bounce">
+                            <i class="fa-solid fa-atom"></i>
+                        </div>
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">
+                            Estructura Atòmica
+                        </span>
+                    </div>
+
+                    <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors font-heading">
+                        Configuració Electrònica
+                    </h2>
+
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6 font-light">
+                        Practica la distribució dels electrons en els diferents nivells i subnivells d'energia dels àtoms.
+                    </p>
+                </div>
+
+                <div class="pt-4 border-t border-slate-700/50 flex items-center justify-between text-sm font-semibold text-cyan-400 group-hover:text-cyan-200">
+                    <span>Obrir activitat</span>
+                    <i class="fa-solid fa-arrow-right text-base transform group-hover:translate-x-2 transition-transform"></i>
+                </div>
+            </a>
+
+            <!-- Card 2: Ubicació dels Elements -->
+            <a href="https://fq-iesalgarb.github.io/ubicacioelements/" target="_self" 
+               class="glass-card card-glow-purple rounded-3xl p-7 flex flex-col justify-between group relative overflow-hidden">
+                
+                <div class="absolute -top-12 -right-12 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl group-hover:bg-purple-500/25 transition-all"></div>
+
+                <div>
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-purple-600 to-indigo-400 flex items-center justify-center text-white text-3xl shadow-lg shadow-purple-500/20 icon-bounce">
+                            <i class="fa-solid fa-table-cells"></i>
+                        </div>
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-purple-500/15 text-purple-300 border border-purple-500/30">
+                            Taula Periòdica
+                        </span>
+                    </div>
+
+                    <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-purple-300 transition-colors font-heading">
+                        Ubicació dels Elements
+                    </h2>
+
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6 font-light">
+                        Cerca i localitza la posició dels elements químics a la taula periòdica segons el seu grup i període.
+                    </p>
+                </div>
+
+                <div class="pt-4 border-t border-slate-700/50 flex items-center justify-between text-sm font-semibold text-purple-400 group-hover:text-purple-200">
+                    <span>Obrir activitat</span>
+                    <i class="fa-solid fa-arrow-right text-base transform group-hover:translate-x-2 transition-transform"></i>
+                </div>
+            </a>
+
+            <!-- Card 3: Nombres d'Oxidació -->
+            <a href="https://fq-iesalgarb.github.io/nombresoxidacio/" target="_self" 
+               class="glass-card card-glow-emerald rounded-3xl p-7 flex flex-col justify-between group relative overflow-hidden">
+                
+                <div class="absolute -top-12 -right-12 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/25 transition-all"></div>
+
+                <div>
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-400 flex items-center justify-center text-white text-3xl shadow-lg shadow-emerald-500/20 icon-bounce">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <span class="px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
+                            Formulació Químiques
+                        </span>
+                    </div>
+
+                    <h2 class="text-2xl font-bold text-white mb-3 group-hover:text-emerald-300 transition-colors font-heading">
+                        Nombres d'Oxidació
+                    </h2>
+
+                    <p class="text-slate-300 text-sm leading-relaxed mb-6 font-light">
+                        Aprèn i practica la determinació dels estats i nombres d'oxidació dels diferents elements químics.
+                    </p>
+                </div>
+
+                <div class="pt-4 border-t border-slate-700/50 flex items-center justify-between text-sm font-semibold text-emerald-400 group-hover:text-emerald-200">
+                    <span>Obrir activitat</span>
+                    <i class="fa-solid fa-arrow-right text-base transform group-hover:translate-x-2 transition-transform"></i>
+                </div>
+            </a>
+
+        </main>
+
+        <section class="w-full max-w-4xl glass-panel rounded-2xl p-6 sm:p-8 border border-slate-700/60 text-center sm:text-left flex flex-col sm:flex-row items-center gap-6 shadow-2xl">
+            <div class="w-14 h-14 rounded-2xl bg-cyan-500/20 border border-cyan-400/30 flex items-center justify-center shrink-0 text-cyan-300 text-2xl">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold text-white mb-1 font-heading">Instruccions per a l'alumnat</h3>
+                <p class="text-slate-300 text-sm font-light leading-relaxed">
+                    Aquestes activitats es poden realitzar des de qualsevol dispositiu. Fes clic a la targeta corresponent per accedir directament a l'exercici assignat.
+                </p>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="relative z-10 border-t border-slate-800/80 bg-slate-950/70 backdrop-blur-md py-6 text-center text-slate-400 text-xs sm:text-sm">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-3">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-microscope text-cyan-400"></i>
+                <span class="font-medium text-slate-300">Departament de Física i Química — IES Algarb</span>
+            </div>
+            <p class="text-slate-500">
+                Portal de recursos i activitats digitals per a l'alumnat.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
